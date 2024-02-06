@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>machina_ndof_sensor_driver</name>
+  <version>0.0.0</version>
+  <description>Machina N-DoF Sensor Driver (meta package)</description>
+  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
+  <license>AGPL-3.0-only</license>
+  <author email="sisahawork@gmail.com">Siddharth Saha</author>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+
+  <!-- RMW is not a strict dependency but the Docker container is set up to use 
+  that and I don't want to make another meta package for it. In a bigger
+  project there would be a general meta package for that -->
+  <exec_depend>rmw_cyclonedds_cpp</exec_depend>
+
+  <!-- Packages that compose this repo -->
+  <exec_depend>machina_ndof_sensor_driver_msgs</exec_depend>
+  <exec_depend>machina_tcp_interface</exec_depend>
+  <exec_depend>machina_ndof_sensor_driver_client</exec_depend>
+  <exec_depend>machina_ndof_sensor_driver_service</exec_depend>
+  <exec_depend>machina_ndof_sensor_driver_system_tests</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_cmake_lint_cmake</test_depend>
+  <test_depend>ament_cmake_xmllint</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
