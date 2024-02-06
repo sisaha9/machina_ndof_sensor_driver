@@ -1,0 +1,44 @@
+machina::client::ndof_sensor_driver::ros_parameters:
+  publish_interval: {
+    type: int,
+    read_only: true,
+    description: "Interval for publishing sensor data in nanoseconds",
+    validation: {
+      gt<>: 0
+    }
+  }
+  num_sensors: {
+    type: int,
+    read_only: true,
+    description: "Number of sensors connected to the system",
+    validation: {
+      gt<>: 0
+    }
+  }
+  collection_intervals: {
+    type: int_array,
+    read_only: true,
+    description: "Interval for collecting sensor data in nanoseconds for each sensor",
+    validation: {
+      not_empty<>: null,
+      lower_element_bounds<>: 0
+    }
+  }
+  service_timeout_intervals: {
+    type: int_array,
+    read_only: true,
+    description: "Timeout interval for each sensor service in nanoseconds during initialization",
+    validation: {
+      not_empty<>: null,
+      lower_element_bounds<>: 0
+    }
+  }
+  max_service_connection_attempts: {
+    type: int_array,
+    read_only: true,
+    description: "Maximum connection attempts to service during initialization",
+    validation: {
+      not_empty<>: null,
+      lower_element_bounds<>: 1
+    }
+  }

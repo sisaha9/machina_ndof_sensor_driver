@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>machina_ndof_sensor_driver_client</name>
+  <version>0.0.0</version>
+  <description>ROS 2 Client implementation to retrieve latest sensor data on demand</description>
+  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
+  <license>AGPL-3.0-only</license>
+  <author email="sisahawork@gmail.com">Siddharth Saha</author>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>rclcpp_components</depend>
+  <depend>iceoryx_hoofs</depend>
+  <depend>generate_parameter_library</depend>
+  <depend>example_interfaces</depend>
+  <depend>machina_ndof_sensor_driver_msgs</depend>
+  <depend>machina_tcp_interface</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_cmake_lint_cmake</test_depend>
+  <test_depend>ament_cmake_xmllint</test_depend>
+  <test_depend>ament_cmake_clang_format</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
