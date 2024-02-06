@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [humble, iron, rolling]
+        ROS_DISTRO: [iron]
         CCACHE_DIR: ["${{ github.workspace }}/.ccache"] # directory for ccache (and how we enable ccache in industrial_ci)
         TARGET_CMAKE_ARGS: ["-DCMAKE_BUILD_TYPE=Release -DENABLE_LOCKFREE=OFF", "-DCMAKE_BUILD_TYPE=Release -DENABLE_LOCKFREE=ON"]
     runs-on: ubuntu-latest
