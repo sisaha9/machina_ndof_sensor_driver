@@ -1,0 +1,76 @@
+machina::service::ndof_sensor_driver::ros_parameters:
+  sensor: {
+    ip_addr: {
+      type: string,
+      read_only: true,
+      description: "IP address of the sensor",
+      validation: {
+        not_empty<>: null
+      }
+    },
+    port: {
+      type: int,
+      read_only: true,
+      description: "Port number of the sensor",
+      validation: {
+        bounds<>: [0, 65535]
+      }
+    }
+  }
+  connection_retry_interval: {
+    type: int,
+    read_only: true,
+    description: "Interval for retrying connection to the sensor during initialization in milliseconds",
+    validation: {
+      gt_eq<>: 0
+    }
+  }
+  send_data_timeout: {
+    type: int,
+    read_only: true,
+    description: "Timeout for sending data to the sensor in milliseconds",
+    validation: {
+      gt_eq<>: 0
+    }
+  }
+  max_connection_attempts: {
+    type: int,
+    read_only: true,
+    description: "Maximum number of connection attempts to the sensor during initialization",
+    validation: {
+      gt<>: 0
+    }
+  }
+  requested_sample_size: {
+    type: int,
+    read_only: true,
+    description: "Requested number of samples to be read from the sensor",
+    validation: {
+      gt<>: 0
+    }
+  }
+  degrees_of_freedom: {
+    type: int,
+    read_only: true,
+    description: "Number of degrees of freedom of the sensor",
+    validation: {
+      gt<>: 0
+    }
+  }
+  sensor_polling_interval: {
+    type: int,
+    read_only: true,
+    description: "Interval for polling the sensor for data in nanoseconds",
+    validation: {
+      gt_eq<>: 0
+    }
+  }
+  frame_id: {
+    type: string,
+    read_only: true,
+    description: "Frame ID of the sensor",
+    validation: {
+      not_empty<>: null
+    }
+  }
+  
