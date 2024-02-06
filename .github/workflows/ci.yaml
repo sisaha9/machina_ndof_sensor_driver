@@ -1,0 +1,56 @@
+name: Main CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - stable
+  pull_request:
+    branches:
+      - stable
+
+permissions:
+  contents: write
+
+jobs:
+  industrial_ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        ROS_DISTRO: [humble, iron, rolling]
+        CCACHE_DIR: ["${{ github.workspace }}/.ccache"] # directory for ccache (and how we enable ccache in industrial_ci)
+        TARGET_CMAKE_ARGS: ["-DCMAKE_BUILD_TYPE=Release -DENABLE_LOCKFREE=OFF", "-DCMAKE_BUILD_TYPE=Release -DENABLE_LOCKFREE=ON"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4 # fetch/store the directory used by ccache before/after the ci run
+        with:
+          path: ${{ matrix.CCACHE_DIR }}
+          # This configuration will always create a new ccache cache starting off from the previous one (if any).
+          # In this simple version it will be shared between all builds of the same ROS_DISTRO
+          key: ccache-${{ matrix.ROS_DISTRO }}-${{github.run_id}}
+          restore-keys: |
+            ccache-${{ matrix.ROS_DISTRO }}
+      - uses: 'ros-industrial/industrial_ci@master'
+        env:
+          ROS_DISTRO: ${{ matrix.ROS_DISTRO }}
+          CCACHE_DIR: ${{ matrix.CCACHE_DIR }}
+          TARGET_CMAKE_ARGS: ${{ matrix.TARGET_CMAKE_ARGS }}
+  generate_docs:
+    runs-on: ubuntu-latest
+    needs: industrial_ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/stable' && needs.industrial_ci.result == 'success'
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          bash -c 'sudo apt update; \
+          sudo apt install doxygen'
+      - name: Build Docs
+        run: |
+          bash -c 'make docs'
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: generated-docs/html # The folder the action should deploy.
