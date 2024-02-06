@@ -1,0 +1,6 @@
+# Empty request
+---
+# Boolean tracking if sensor data has been filled
+bool sensor_data_filled
+# Sensor data output
+SensorOutput sensor
