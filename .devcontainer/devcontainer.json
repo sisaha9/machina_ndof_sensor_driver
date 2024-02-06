@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Machina NDOF Sensor DevContainer",
+
+	// Build Docker image using initializeCommand so as to specify run arguments when launching
+	"initializeCommand": "make build-docker-cpu-iron IMG_NAME=machina_ndof_sensor_driver_dev_image:latest",
+	// Run built image
+	"image": "machina_ndof_sensor_driver_dev_image:latest",
+	// Specify run arguments when launching container
+	"runArgs": [
+		"--network=host"
+	],
+	"postAttachCommand": "bash",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"twxs.cmake",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-python.python",
+				"ms-iot.vscode-ros",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode-remote.remote-containers",
+				"eamodio.gitlens",
+				"GitHub.copilot"
+			]
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

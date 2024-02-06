@@ -1,0 +1,19 @@
+# ROS 2
+build/
+install/
+log/
+logs/
+
+# VSCode
+.vscode/
+
+# VCS code
+src/external/
+
+# Custom Generated artifacts
+tools/image/ros-deps
+generated-docs
+
+# ROS bags
+*.mcap
+*.bag
