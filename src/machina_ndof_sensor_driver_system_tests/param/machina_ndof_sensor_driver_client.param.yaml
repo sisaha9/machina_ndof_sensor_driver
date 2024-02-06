@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    publish_interval: 2000000
+    num_sensors: 2
+    collection_intervals: [5000000, 5000000]
+    service_timeout_intervals: [1000000000, 1000000000]
+    max_service_connection_attempts: [10, 10]

@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    sensor:
+      ip_addr: "127.0.0.1"
+      port: 23451
+    connection_retry_interval: 5000
+    send_data_timeout: 1000
+    max_connection_attempts: 10
+    requested_sample_size: 100
+    degrees_of_freedom: 6
+    frame_id: "sensor_1"
+    sensor_polling_interval: 500000

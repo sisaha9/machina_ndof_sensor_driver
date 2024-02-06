@@ -1,0 +1,60 @@
+session_name: Machina Sensor Simulation and Recording
+windows:
+  - window_name: Launch Sensor Simulators
+    layout: tiled
+    panes:
+    - shell_command:
+      - python3 src/machina_ndof_sensor_driver_system_tests/tests/sensor_simulation.py --address 127.0.0.1 --port 23451 --sampling_rate 2000 --overhead_delay 0.001 --dof 6 --num_connections 1
+    - shell_command:
+      - python3 src/machina_ndof_sensor_driver_system_tests/tests/sensor_simulation.py --address 127.0.0.3 --port 23453 --sampling_rate 4000 --overhead_delay 0.003 --dof 6 --num_connections 1
+  - window_name: Launch Driver
+    layout: tiled
+    panes:
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - ros2 launch machina_ndof_sensor_driver_system_tests machina_ndof_sensor_driver.launch.py
+  - window_name: Lifecycle Manager
+    layout: tiled
+    panes:
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 5
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_1 configure
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_1 activate
+      - sleep 65
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_1 deactivate
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_1 shutdown
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 5
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_2 configure
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_2 activate
+      - sleep 65
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_2 deactivate
+      - ros2 lifecycle set /machina_ndof_sensor_driver_service_node_2 shutdown
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 10
+      - ros2 lifecycle set /machina_ndof_sensor_driver_client_node configure
+      - ros2 lifecycle set /machina_ndof_sensor_driver_client_node activate
+      - sleep 60
+      - ros2 lifecycle set /machina_ndof_sensor_driver_client_node deactivate
+      - ros2 lifecycle set /machina_ndof_sensor_driver_client_node shutdown
+  - window_name: Recording
+    layout: tiled
+    panes:
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 15
+      - ros2 bag record -s mcap -a
+  - window_name: Visualization
+    layout: tiled
+    panes:
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 15
+      - ros2 topic hz /joint_sensor_output
+    - shell_command:
+      - source ./tools/scripts/source_all.sh
+      - sleep 15
+      - ros2 topic echo /joint_sensor_output
