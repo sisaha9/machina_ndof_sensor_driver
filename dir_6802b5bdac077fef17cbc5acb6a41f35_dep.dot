@@ -1,0 +1,15 @@
+digraph "src/machina_tcp_interface" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"]
+  subgraph clusterdir_6802b5bdac077fef17cbc5acb6a41f35 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_6802b5bdac077fef17cbc5acb6a41f35.html"];
+    dir_6802b5bdac077fef17cbc5acb6a41f35 [shape=plaintext label="machina_tcp_interface"];
+  dir_acc5ad0c9fc8501f85c4b948790378ad [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_acc5ad0c9fc8501f85c4b948790378ad.html"];
+  dir_093c175742d5822fd7eea816425ff710 [shape=box label="src" fillcolor="white" style="filled" URL="dir_093c175742d5822fd7eea816425ff710.html"];
+  }
+  }
+  dir_093c175742d5822fd7eea816425ff710->dir_acc5ad0c9fc8501f85c4b948790378ad [headlabel="1", labeldistance=1.5 headhref="dir_000017_000015.html"];
+}

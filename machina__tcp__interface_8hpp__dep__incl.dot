@@ -1,0 +1,13 @@
+digraph "src/machina_tcp_interface/include/machina_tcp_interface/machina_tcp_interface.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/machina_tcp_interface\l/include/machina_tcp_interface\l/machina_tcp_interface.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/machina_ndof_sensor\l_driver_service/include\l/machina_ndof_sensor_driver\l_service/machina_ndof_sensor\l_driver_service_node.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machina__ndof__sensor__driver__service__node_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/machina_ndof_sensor\l_driver_service/src/machina\l_ndof_sensor_driver_service\l_node.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machina__ndof__sensor__driver__service__node_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/machina_tcp_interface\l/src/machina_tcp_interface.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machina__tcp__interface_8cpp.html",tooltip=" "];
+}

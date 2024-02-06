@@ -1,0 +1,11 @@
+digraph "src/machina_tcp_interface/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6802b5bdac077fef17cbc5acb6a41f35 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="machina_tcp_interface" fontname="Helvetica", fontsize="10", URL="dir_6802b5bdac077fef17cbc5acb6a41f35.html"]
+  dir_acc5ad0c9fc8501f85c4b948790378ad [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_acc5ad0c9fc8501f85c4b948790378ad.html"];
+  dir_093c175742d5822fd7eea816425ff710 [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_093c175742d5822fd7eea816425ff710.html"];
+  }
+  dir_093c175742d5822fd7eea816425ff710->dir_acc5ad0c9fc8501f85c4b948790378ad [headlabel="1", labeldistance=1.5 headhref="dir_000017_000015.html"];
+}

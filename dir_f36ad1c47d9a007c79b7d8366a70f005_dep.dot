@@ -1,0 +1,15 @@
+digraph "src/machina_ndof_sensor_driver_service/include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_86f22f6cc31dbd6851ed640809df6b21 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="machina_ndof_sensor_driver_service" fontname="Helvetica", fontsize="10", URL="dir_86f22f6cc31dbd6851ed640809df6b21.html"]
+  subgraph clusterdir_f36ad1c47d9a007c79b7d8366a70f005 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_f36ad1c47d9a007c79b7d8366a70f005.html"];
+    dir_f36ad1c47d9a007c79b7d8366a70f005 [shape=plaintext label="include"];
+  dir_7a21e7a17e6bb96b7c9108e2db1b1c1b [shape=box label="machina_ndof_sensor_driver_service" fillcolor="white" style="filled" URL="dir_7a21e7a17e6bb96b7c9108e2db1b1c1b.html"];
+  }
+  }
+  dir_6802b5bdac077fef17cbc5acb6a41f35 [shape=box label="machina_tcp_interface" fillcolor="white" style="filled" color="red" URL="dir_6802b5bdac077fef17cbc5acb6a41f35.html"];
+  dir_7a21e7a17e6bb96b7c9108e2db1b1c1b->dir_6802b5bdac077fef17cbc5acb6a41f35 [headlabel="1", labeldistance=1.5 headhref="dir_000011_000006.html"];
+}

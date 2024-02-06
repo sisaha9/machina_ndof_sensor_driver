@@ -1,0 +1,9 @@
+digraph "src/machina_ndof_sensor_driver_service/include/machina_ndof_sensor_driver_service/machina_ndof_sensor_driver_service_node.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/machina_ndof_sensor\l_driver_service/include\l/machina_ndof_sensor_driver\l_service/machina_ndof_sensor\l_driver_service_node.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/machina_ndof_sensor\l_driver_service/src/machina\l_ndof_sensor_driver_service\l_node.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machina__ndof__sensor__driver__service__node_8cpp.html",tooltip=" "];
+}

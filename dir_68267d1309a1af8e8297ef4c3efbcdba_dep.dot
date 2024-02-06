@@ -1,0 +1,16 @@
+digraph "src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
+    dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+  dir_6bdeac235d277acd8f116b65821ccde9 [shape=box label="machina_ndof_sensor_driver" fillcolor="white" style="filled" URL="dir_6bdeac235d277acd8f116b65821ccde9.html"];
+  dir_9cb719b431a5d0bce065e641bc062bec [shape=box label="machina_ndof_sensor_driver_client" fillcolor="white" style="filled" color="red" URL="dir_9cb719b431a5d0bce065e641bc062bec.html"];
+  dir_a914063db1cac121f055f9bf96cc47ff [shape=box label="machina_ndof_sensor_driver_msgs" fillcolor="white" style="filled" URL="dir_a914063db1cac121f055f9bf96cc47ff.html"];
+  dir_86f22f6cc31dbd6851ed640809df6b21 [shape=box label="machina_ndof_sensor_driver_service" fillcolor="white" style="filled" color="red" URL="dir_86f22f6cc31dbd6851ed640809df6b21.html"];
+  dir_966240893a7b76c16d15a1592914eec9 [shape=box label="machina_ndof_sensor_driver_system_tests" fillcolor="white" style="filled" color="red" URL="dir_966240893a7b76c16d15a1592914eec9.html"];
+  dir_6802b5bdac077fef17cbc5acb6a41f35 [shape=box label="machina_tcp_interface" fillcolor="white" style="filled" color="red" URL="dir_6802b5bdac077fef17cbc5acb6a41f35.html"];
+  }
+  dir_86f22f6cc31dbd6851ed640809df6b21->dir_6802b5bdac077fef17cbc5acb6a41f35 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000006.html"];
+}
